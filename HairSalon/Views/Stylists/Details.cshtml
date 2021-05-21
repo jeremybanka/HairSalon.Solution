@@ -1,0 +1,26 @@
+<!-- prettier-ignore -->
+@{ Layout = "_Layout"; }
+
+@model HairSalon.Models.Stylist
+<!-- prettier-ignore-end -->
+<header>
+  <h2>Stylist</h2>
+  <h3>@Model.StylistId</h3>
+</header>
+<main>
+  @using (Html.BeginForm()) {
+  <section>
+    <label for="Name">Name</label>
+    <input
+      id="Name"
+      name="Name"
+      type="text"
+      disabled="true"
+      value="@Html.DisplayFor(model => model.Name)"
+    />
+  </section>
+  }
+  <p>@Html.ActionLink("Edit", "Edit", new { id = Model.StylistId })</p>
+  <p>@Html.ActionLink("Delete", "Delete", new { id = Model.StylistId })</p>
+  <p>@Html.ActionLink("Back", "Index")</p>
+</main>
