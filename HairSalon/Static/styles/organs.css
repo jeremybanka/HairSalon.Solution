@@ -1,0 +1,64 @@
+form * {
+  color: var(--fg);
+  font-size: 24px;
+  font-family: Charter;
+}
+
+form section:focus-within label {
+  color: var(--fg-link);
+}
+
+form label {
+  font-weight: bold;
+}
+
+form select,
+form input[type="text"],
+form input[type="number"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-style: italic;
+  border-bottom: 1px solid var(--fg);
+  display: block;
+  margin: 0.25em 0 1em 1em;
+}
+
+form select:focus, form select:focus-within,
+form input[type="text"]:focus,
+form input[type="text"]:focus-within,
+form input[type="number"]:focus,
+form input[type="number"]:focus-within {
+  color: var(--fg-link);
+  border-bottom: 1px solid var(--fg-link);
+}
+
+form select:disabled,
+form input[type="text"]:disabled,
+form input[type="number"]:disabled {
+  border-bottom: 1px solid #0000;
+}
+
+a,
+button,
+input[type="submit"] {
+  text-decoration: none;
+  font-size: 20px;
+  cursor: pointer;
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: bold;
+  padding: 1px 6px 2px;
+}
+
+a:hover, a:focus,
+button:hover,
+button:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background: var(--fg-link);
+}
+
+ul {
+  list-style-type: square;
+}
+/*# sourceMappingURL=organs.css.map */

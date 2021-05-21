@@ -1,7 +1,7 @@
 :root {
-  --fg: #9f9999;
-  --bg: #363333;
-  --fg-link: #fff;
+  --fg: #396;
+  --bg: #fdf6f0;
+  --fg-link: #063;
   body {
     color: var(--fg);
     background: var(--bg);
@@ -14,7 +14,7 @@
       max-width: 600px;
       margin: auto;
       position: relative;
-      * ~ * {
+      > * ~ * {
         margin-top: 1em;
       }
     }
@@ -36,56 +36,4 @@
       }
     }
   }
-}
-
-form {
-  * {
-    color: var(--fg);
-    font-size: 24px;
-    font-family: Charter;
-  }
-  section:focus-within label {
-    color: var(--fg-link);
-  }
-  label {
-    font-weight: bold;
-  }
-  input {
-    &[type="text"],
-    &[type="number"] {
-      box-sizing: border-box;
-      font-style: italic;
-      border-bottom: 1px solid var(--fg);
-      display: block;
-      margin: 0.25em 0 1em 1em;
-      &:focus,
-      &:focus-within {
-        color: var(--fg-link);
-        border-bottom: 1px solid var(--fg-link);
-      }
-      &:disabled {
-        border-bottom: 1px solid #0000;
-      }
-    }
-  }
-}
-
-a,
-button,
-input[type="submit"] {
-  text-decoration: none;
-  font-size: 20px;
-  cursor: pointer;
-  background: var(--fg);
-  color: var(--bg);
-  font-weight: bold;
-  padding: 1px 6px 2px;
-  &:hover,
-  &:focus {
-    background: var(--fg-link);
-  }
-}
-
-ul {
-  list-style-type: square;
 }
