@@ -21,21 +21,20 @@
 }
 
 :root body header > * ~ *,
-:root body main > * ~ * {
+:root body header ul > li,
+:root body main > * ~ *,
+:root body main ul > li {
   margin-top: 1em;
+}
+
+:root body header li,
+:root body main li {
+  margin-bottom: 2em;
 }
 
 :root body header {
   padding-bottom: 15px;
   margin-bottom: 10px;
-}
-
-:root body header::after {
-  content: "";
-  width: 30px;
-  margin-top: 25px;
-  display: block;
-  border-bottom: 4px solid var(--fg);
 }
 
 :root body header h3 {

@@ -47,4 +47,16 @@ input[type="submit"] {
 
 ul {
   list-style-type: square;
+  padding-bottom: 1em;
+}
+
+header,
+ul {
+  &::after {
+    content: "";
+    width: 30px;
+    margin-top: 25px;
+    display: block;
+    border-bottom: 4px solid var(--fg);
+  }
 }

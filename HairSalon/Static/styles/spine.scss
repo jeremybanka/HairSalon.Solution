@@ -14,20 +14,17 @@
       max-width: 600px;
       margin: auto;
       position: relative;
-      > * ~ * {
+      > * ~ *,
+      ul > li {
         margin-top: 1em;
+      }
+      li {
+        margin-bottom: 2em;
       }
     }
     header {
       padding-bottom: 15px;
       margin-bottom: 10px;
-      &::after {
-        content: "";
-        width: 30px;
-        margin-top: 25px;
-        display: block;
-        border-bottom: 4px solid var(--fg);
-      }
       h3 {
         margin-top: 10px;
         font-size: 12px;
