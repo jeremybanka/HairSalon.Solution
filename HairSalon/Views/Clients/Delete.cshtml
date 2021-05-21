@@ -1,0 +1,17 @@
+@{ Layout = "_Layout"; }
+
+@model HairSalon.Models.Client
+<header>
+  <h2>Are you sure?</h2>
+</header>
+<main>
+  <p>
+    You are about to delete
+    <b>@Html.DisplayFor(model => model.Name)</b> from your database.
+  </p>
+  @using (Html.BeginForm()) {
+
+  <input type="submit" value="Yes, delete @Model.Name" />
+  }
+  <p>@Html.ActionLink("Cancel", "Details", new { id = Model.ClientId })</p>
+</main>

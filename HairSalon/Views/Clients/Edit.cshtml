@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+
+<header>
+  <h2>Edit Client</h2>
+  <h3>@Model.ClientId</h3>
+</header>
+<main>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.ClientId)
+
+    <section>
+      @Html.LabelFor(model => model.Name)
+      @Html.TextBoxFor(model => model.Name)
+    </section>
+
+    <section>
+      @Html.LabelFor(model => model.Stylist)
+      @Html.DropDownList("StylistId")
+    </section>
+
+    <p><input type="submit" value="Done" /></p>
+  }
+  <p>@Html.ActionLink("Cancel", "Details", new { id = Model.ClientId })</p>
+</main>

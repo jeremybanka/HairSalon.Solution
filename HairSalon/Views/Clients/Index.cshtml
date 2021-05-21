@@ -1,0 +1,38 @@
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@model List<Client>;
+
+<header>
+  <h1>Clients</h1>
+</header>
+<main>
+  @if (@Model.Count == 0)
+  {
+    <h3>No Clients have been added yet!</h3>
+  }
+  <ul>
+    @foreach (Client c in Model)
+    {
+      <li>@Html.ActionLink($"{c.Name}", "Details", new { id = c.ClientId })
+
+        @if (c.Stylist != null)
+        {
+          <i>– @c.Stylist.Name</i>
+        }
+
+      </li>
+    }
+  </ul>
+  @if (ViewBag.NoStylists)
+  {
+    <p><i>You cannot add a client without any Stylists</i></p>
+  }
+  @if (!ViewBag.NoStylists)
+  {
+    <p>@Html.ActionLink("New Client", "Create")</p>
+  }
+  <p>@Html.ActionLink("Home", "Index", "Home")</p>
+</main>

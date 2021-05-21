@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+
+<header>
+  <h2>Client</h2>
+  <h3>@Model.ClientId</h3>
+</header>
+<main>
+  @using (Html.BeginForm())
+  {
+    <section>
+      <label for="Name">Name</label>
+      <input disabled="true" id="Name" name="Name" type="text" value="@Html.DisplayFor(model => model.Name)" />
+    </section>
+    <section>
+      <label for="Stylist">Stylist</label>
+      <input disabled="true" id="Stylist" name="Stylist" type="text"
+      value="@Html.DisplayFor(model => model.Stylist.Name)" />
+    </section>
+  }
+  <p>@Html.ActionLink("Edit", "Edit", new { id = Model.ClientId })</p>
+  <p>@Html.ActionLink("Delete", "Delete", new { id = Model.ClientId })</p>
+  <p>@Html.ActionLink("Back", "Index")</p>
+</main>
