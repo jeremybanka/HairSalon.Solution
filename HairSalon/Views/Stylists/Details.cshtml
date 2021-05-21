@@ -1,5 +1,9 @@
 <!-- prettier-ignore -->
-@{ Layout = "_Layout"; }
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
 
 @model HairSalon.Models.Stylist
 <!-- prettier-ignore-end -->
@@ -8,19 +12,23 @@
   <h3>@Model.StylistId</h3>
 </header>
 <main>
-  @using (Html.BeginForm()) {
-  <section>
-    <label for="Name">Name</label>
-    <input
-      id="Name"
-      name="Name"
-      type="text"
-      disabled="true"
-      value="@Html.DisplayFor(model => model.Name)"
-    />
-  </section>
+  @using (Html.BeginForm())
+  {
+    <section>
+      <label for="Name">Name</label>
+      <input id="Name" name="Name" type="text" disabled="true" value="@Html.DisplayFor(model => model.Name)" />
+    </section>
   }
   <p>@Html.ActionLink("Edit", "Edit", new { id = Model.StylistId })</p>
   <p>@Html.ActionLink("Delete", "Delete", new { id = Model.StylistId })</p>
+  <h3>Clients</h3>
+  <ul>
+    @foreach (Client c in Model.Clients)
+    {
+      <li>
+        @Html.ActionLink(@c.Name, "Details", "Clients", new { id = c.ClientId } )
+      </li>
+    }
+  </ul>
   <p>@Html.ActionLink("Back", "Index")</p>
 </main>

@@ -16,7 +16,14 @@
       <input disabled="true" id="Name" name="Name" type="text" value="@Html.DisplayFor(model => model.Name)" />
     </section>
     <section>
-      <label for="Stylist">Stylist</label>
+      @if (Model.Stylist != null)
+      {
+        <p>@Html.ActionLink("Stylist", "Details", "Stylists", new { id = Model.Stylist.StylistId })</p>
+      }
+      @if (Model.Stylist == null)
+      {
+        <i>The stylist assigned to this client was deleted. Edit the client to fix this.</i>
+      }
       <input disabled="true" id="Stylist" name="Stylist" type="text"
       value="@Html.DisplayFor(model => model.Stylist.Name)" />
     </section>
