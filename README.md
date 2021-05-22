@@ -1,4 +1,4 @@
-### OrderTracker.Solution
+### HairSalon.Solution
 
 _By Jeremy Banka_
 
@@ -16,15 +16,6 @@ _By Jeremy Banka_
 ## Description
 
 This website is an exercise in using Microsoft's Entity Framework Core to abstract the process of reading from and writing to a MySQL database.
-
-In this codebase you will find examples of:
-
-- Exhaustively-tested Models that represent Vendor and Order.
-- Pages assembled with Razor that reveal user-created data.
-- Utility methods that find specific user-created orders and vendors.
-- Three MVC controllers that handle HTML requests for the homepage, vendors, and orders.
-- Guid implementation in lieu of simple tally-ids.
-- A homepage that gives dynamic greetings using some very tight C# _switch expression_ syntax. Something JS doesn't have!
 
 ## Setup/Installation Requirements
 
